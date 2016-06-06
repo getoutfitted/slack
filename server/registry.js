@@ -1,7 +1,7 @@
 ReactionCore.registerPackage({
   label: 'Slack',
   name: 'slack',
-  icon: 'fa fa-email',
+  icon: 'fa fa-slack',
   autoEnable: true,
   registry: [{
     route: '/dashboard/slack',
@@ -10,7 +10,7 @@ ReactionCore.registerPackage({
     label: 'Slack',
     description: 'Slack Post a Message to Channel',
     container: 'getoutfitted',
-    icon: 'fa fa-email',
+    icon: 'fa fa-slack',
     template: 'slackDashboard',
     workflow: 'coreWorkflow',
     priority: 3
