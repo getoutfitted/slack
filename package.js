@@ -2,12 +2,12 @@ Package.describe({
   summary: 'Slack Chat for Reaction',
   name: 'getoutfitted:slack',
   version: '0.1.0',
-  git: 'https://github.com/getoutfitted/slack'  
+  git: 'https://github.com/getoutfitted/slack'
 });
 
-Npm.depends({
-  "slack": "7.2.0"
-});
+// Npm.depends({
+//   "slack": "7.2.0"
+// });
 
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.3');
@@ -23,7 +23,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'server/registry.js',
-    'server/methods/slack.js'
+    'server/slack.js'
   ], 'server');
 
   api.addFiles([
@@ -36,4 +36,6 @@ Package.onUse(function (api) {
     'client/templates/dashboard/dashboard.html',
     'client/templates/dashboard/dashboard.js'
   ], 'client');
+
+  api.export('Slack', 'server')
 });
