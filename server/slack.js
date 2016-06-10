@@ -24,7 +24,7 @@ Slack.PostMessage = function (options, attachments) {
             });
           ReactionCore.Log.info(`Slack message posted to ${options.channel}`);
         } catch (err) {
-          Log.error('Error in making call to API' + err);
+          Log.error('Error in making call to Slack API' + err);
         }
       } else {
         ReactionCore.Log.error('Slack is missing it\'s API Token');
