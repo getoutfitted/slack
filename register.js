@@ -1,4 +1,6 @@
-ReactionCore.registerPackage({
+import { Reaction } from '/server/api';
+
+Reaction.registerPackage({
   label: 'Slack',
   name: 'slack',
   icon: 'fa fa-slack',
@@ -12,7 +14,7 @@ ReactionCore.registerPackage({
     container: 'getoutfitted',
     icon: 'fa fa-slack',
     template: 'slackDashboard',
-    workflow: 'coreWorkflow',
+    workflow: 'slackWorkflow',
     priority: 3
   }, {
     route: '/dashboard/slack/settings',
@@ -20,5 +22,32 @@ ReactionCore.registerPackage({
     label: 'Slack Settings',
     name: 'slackSettings',
     template: 'slackSettings'
+  }],
+  layout: [{
+    workflow: "slackWorkflow",
+    layout: "coreLayout",
+    theme: "default",
+    enabled: true,
+    structure: {
+      template: "slackDashboard",
+      layoutHeader: "goLayoutHeader",
+      layoutFooter: "goLayoutFooter",
+      notFound: "goNotFound",
+      dashboardControls: "dashboardControls",
+      adminControlsFooter: "adminControlsFooter"
+    }
+  }, {
+    workflow: "slackWorkflow",
+    layout: "getoutfittedLayout",
+    theme: "default",
+    enabled: true,
+    structure: {
+      template: "slackDashboard",
+      layoutHeader: "goLayoutHeader",
+      layoutFooter: "goLayoutFooter",
+      notFound: "goNotFound",
+      dashboardControls: "dashboardControls",
+      adminControlsFooter: "adminControlsFooter"
+    }
   }]
 });
