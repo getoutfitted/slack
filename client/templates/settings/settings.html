@@ -1,8 +1,8 @@
 <template name='slackSettings'>
   <div class="panel-body">
     {{#autoForm
-        collection="ReactionCore.Collections.Packages"
-        schema="ReactionCore.Schemas.SlackPackageConfig"
+        collection=Collections.Packages
+        schema=SlackPackageConfig
         doc=packageData
         type="update"
         id="slack-update-form"

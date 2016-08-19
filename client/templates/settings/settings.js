@@ -1,8 +1,18 @@
+import { Template } from 'meteor/templating';
+import { Reaction } from '/client/api';
+import { Packages } from '/lib/collections';
+import { SlackPackageConfig } from '../../../lib/collections';
+
+import './settings.html';
+
 Template.slackSettings.helpers({
+  SlackPackageConfig: function () {
+    return SlackPackageConfig;
+  },
   packageData: function () {
-    return ReactionCore.Collections.Packages.findOne({
+    return Packages.findOne({
       name: 'slack',
-      shopId: ReactionCore.getShopId()
+      shopId: Reaction.getShopId()
     });
   }
 });
